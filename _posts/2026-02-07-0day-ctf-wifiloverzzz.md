@@ -4,7 +4,7 @@ date: 2026-03-10 00:00:00 +0800
 categories: [CTF, Wireless]
 tags: [ctf, wireless, wifi, wpa3, wep, wireshark, pcap]
 image:
-  path: /assets/img/WhatsApp Image 2026-03-10 at 11.07.31 AM.jpeg
+  path: /assets/img/0day-badge.jpeg
   alt: 0day Wireless Penetration Tester
 description: Writeup for 0day Academy CTF WiFi Edition by team WifiLoverZzz — covering recon, hidden SSID, WPA3-SAE exploitation, and WEP cracking.
 ---
@@ -16,8 +16,8 @@ description: Writeup for 0day Academy CTF WiFi Edition by team WifiLoverZzz — 
 | Role | Name | CTF Username |
 |------|------|--------------|
 | Team Leader | Muhammad Harith Muanis bin Masrur | AhmadBatu |
-| Member | Musyrif Thaqif | Keeps |
-| Member | Nur Adlina Auji  | Dietgucci |
+| Member | Musyrif Thaqif  | Keeps |
+| Member | Nur Adlina Auji | Dietgucci |
 | Member | Nur Alia Izzati | yoss |
 
 ---
@@ -172,7 +172,7 @@ I started by looking at the network name (SSID): **`Hidden_Key_0x42`**. In CTFs,
 
 Since the challenge mentioned a "backdoor in the math," I went straight to the **SAE Commit** frames in the pcap. Usually these frames are full of random cryptographic noise, but I spotted the ASCII string `5#+$79` — not normal for WPA3. I knew the flag was hidden there.
 
-![Dragon's Heart Method 2 - SAE Commit anomaly](/assets/img/dragonsheart method2.png)
+![Dragon's Heart Method 2 - SAE Commit anomaly](/assets/img/dragonsheart-method2.png)
 
 **Step 1: Carve the raw data**
 
@@ -224,15 +224,15 @@ What I did:
 
 Okay first of all, I created the csv file which is `wifi_data.csv`:
 
-![Target Lock - csv file created](/assets/img/kali tlis.png)
+![Target Lock - csv file created](/assets/img/kali-tlis.png)
 
 Then I checked if the file looks right with a simple header command `head -5 wifi_data.csv` — so it shows the header and first few lines:
 
-![Target Lock - head command output](/assets/img/kali tlis2.png)
+![Target Lock - head command output](/assets/img/kali-tlis2.png)
 
 Then I typed the counting command to show the output:
 
-![Target Lock - counting command output](/assets/img/kali tlis3.png)
+![Target Lock - counting command output](/assets/img/kali-tlis3.png)
 
 I built a command pipeline to find the most targeted device:
 
