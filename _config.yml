@@ -34,15 +34,16 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Adlina
+  name: Dietgucc1
   email: linaauji00@gmail.com  # change to your email address
   links:
     # The first element serves as the copyright owner's link
    # - https://twitter.com/username # change to your Twitter homepage
     - https://github.com/Dietgucc1 # change to your GitHub homepage
+    - https://www.linkedin.com/in/nuradlinaauji/ # change to your LinkedIn homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/nuradlinaauji/
+   
 
 
 
@@ -100,7 +101,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://pin.it/7qmcLzJsJ  
+avatar: https://i.pinimg.com/736x/3e/8b/e2/3e8be284c0b08ed8e58409a3b70b7514.jpg # string, local or CORS resources
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
