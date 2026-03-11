@@ -1,7 +1,7 @@
 ---
 title: "Hack The Box — Starting Point: Meow Writeup"
 date: 2026-03-11 00:00:00 +0800
-categories: [CTF, HackTheBox]
+categories: [CTF, HTB-StartingPoint]
 tags: [htb, starting-point, telnet, nmap, openvpn, linux]
 image:
   path: /assets/img/meow-badge.jpeg
@@ -35,21 +35,20 @@ Meow is the first machine in Hack The Box's Starting Point series. It is designe
 
 ## Step 1 — Connect to the HTB VPN
 
-Before anything else, you need to connect to the HTB VPN. Without this, your machine cannot communicate with the target.
+Before anything else, need to connect to the HTB VPN. Without this, our machine cannot communicate with the target.
 
 1. Log in to [app.hackthebox.com](https://app.hackthebox.com)
 2. Go to **Starting Point** → **Connect to HTB** → **OpenVPN**
 3. Select your region and download the `.ovpn` file
-
-![Download VPN](/assets/img/meow-2.png)
-
+![Download VPN](/assets/img/meow-2.jpeg)
 4. Open a terminal and run:
 
-![Meow Banner](/assets/img/meow-1.png)
+![Meow Banner](/assets/img/meow-1.jpeg)
 
 ```bash
 sudo openvpn ~/Downloads/starting_points_eu-starting-point-2-dhcp.ovpn
 ```
+Make sure you dir file is correct
 
 5. Wait until you see the following line — this confirms you are connected:
 
@@ -57,7 +56,7 @@ sudo openvpn ~/Downloads/starting_points_eu-starting-point-2-dhcp.ovpn
 Initialization Sequence Completed
 ```
 
-![VPN Connected](/assets/img/meow-3.png)
+![VPN Connected](/assets/img/meow-3.jpeg)
 
 > **Important:** Keep this terminal open the entire time. Open a new terminal tab for all other commands.
 
@@ -66,14 +65,14 @@ Initialization Sequence Completed
 ## Step 2 — Spawn the Machine and Verify Connectivity
 
 1. On the HTB website, go to the **Meow** machine page and click **Spawn Machine**
-2. Wait for the **Target IP Address** to appear (e.g. `10.129.11.126`)
+2. Wait for the **Target IP Address** to appear (e.g. `10.129.11.129`)
 3. In a **new terminal**, verify you can reach the target using ping:
 
 ```bash
-ping -c 4 10.129.11.126
+ping -c 4 10.129.11.129
 ```
 
-![Ping Target](/assets/img/meow-4.png)
+![Ping Target](/assets/img/meow-4.jpeg)
 
 If you receive replies with no packet loss, your connection to the target is stable and you are ready to proceed.
 
@@ -84,15 +83,15 @@ If you receive replies with no packet loss, your connection to the target is sta
 Now we use **Nmap** (Network Mapper) to discover which ports are open and what services are running on the target.
 
 ```bash
-nmap -sV -Pn -T4 10.129.11.126
+nmap -sV -Pn -T4 10.129.11.129
 ```
 
 **Flags explained:**
 - `-sV` — detects the version of services running on open ports
 - `-Pn` — skips the ping check and scans even if the host appears down
-- `-T4` — uses aggressive timing for a faster scan
+- `-T4` — uses aggressive timing for a faster scan (haha if I dont use this, it took a bit longer to wait for the scan)
 
-![Nmap Scan](/assets/img/meow-5.png)
+![Nmap Scan](/assets/img/meow-5.jpeg)
 
 **Output:**
 
@@ -101,42 +100,42 @@ PORT   STATE SERVICE VERSION
 23/tcp open  telnet  Linux telnetd
 ```
 
-Port **23** is open and running **Telnet** — a legacy protocol used for remote management of hosts over a network. Telnet is considered insecure because it transmits data, including credentials, in plain text.
+Port **23** is open and running **Telnet** — a protocol used for remote management of hosts over a network. Telnet is considered insecure because it transmits data, including credentials, in plain text.
 
 ---
 
 ## Step 4 — Connect via Telnet
 
-Since Telnet is running on the target, we can attempt to connect to it:
+Since Telnet is running on the target, I can attempt to connect to it:
 
 ```bash
-telnet 10.129.11.126
+telnet 10.129.11.129
 ```
 
-You will be greeted with a login prompt. Many misconfigured systems leave default credentials in place. We try logging in as `root` with no password:
+I have been greeted with a login prompt. Many misconfigured systems leave default credentials in place. I try logging in as `root` with no password:
 
 ```
 Meow login: root
 Password: (press Enter — leave blank)
 ```
 
-This works! We are now logged in as the **root** user, which means we have full administrative access to the machine.
+This works! I logged in as the **root** user, which means I have full administrative access to the machine.
 
-![Telnet Login](/assets/img/meow-6.png)
+![Telnet Login](/assets/img/meow-6.jpeg)
 
 ---
 
 ## Step 5 — Retrieve the Flag
 
-Now that we have access, we simply read the flag file:
+Now that I have access, I simply read the flag file:
 
 ```bash
 cat flag.txt
 ```
 
-![Flag](/assets/img/meow-7.png)
+![Flag](/assets/img/meow-7.jpeg)
 
-The flag will be displayed in the terminal. Copy it and submit it on the HTB Meow machine page to complete the challenge. ✅
+Yeay! found the flag! 
 
 ---
 
