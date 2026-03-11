@@ -40,10 +40,11 @@ Before anything else, need to connect to the HTB VPN. Without this, our machine 
 1. Log in to [app.hackthebox.com](https://app.hackthebox.com)
 2. Go to **Starting Point** → **Connect to HTB** → **OpenVPN**
 3. Select your region and download the `.ovpn` file
-![Download VPN](/assets/img/meow-2.jpeg)
-4. Open a terminal and run:
 
 ![Meow Banner](/assets/img/meow-1.jpeg)
+![Download VPN](/assets/img/meow-2.jpeg)
+
+4. Open a terminal and run:
 
 ```bash
 sudo openvpn ~/Downloads/starting_points_eu-starting-point-2-dhcp.ovpn
