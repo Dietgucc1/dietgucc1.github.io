@@ -48,7 +48,7 @@ Before anything else, need to connect to the HTB VPN. Without this, our machine 
 ```bash
 sudo openvpn ~/Downloads/starting_points_eu-starting-point-2-dhcp.ovpn
 ```
-Make sure you dir file is correct
+Make sure your dir file is correct
 
 5. Wait until you see the following line — this confirms you are connected:
 
@@ -56,7 +56,7 @@ Make sure you dir file is correct
 Initialization Sequence Completed
 ```
 
-![VPN Connected](/assets/img/meow-3.jpeg)
+![VPN Connected](/assets/img/meow-8.jpeg)
 
 > **Important:** Keep this terminal open the entire time. Open a new terminal tab for all other commands.
 
@@ -65,7 +65,8 @@ Initialization Sequence Completed
 ## Step 2 — Spawn the Machine and Verify Connectivity
 
 1. On the HTB website, go to the **Meow** machine page and click **Spawn Machine**
-2. Wait for the **Target IP Address** to appear (e.g. `10.129.11.129`)
+2. Wait for the **Target IP Address** to appear (e.g. `10.129.11.129`) ps:in my picture given I have already respawned the IP address for the screenshot purpose
+![VPN Connected](/assets/img/meow-3.jpeg)
 3. In a **new terminal**, verify you can reach the target using ping:
 
 ```bash
