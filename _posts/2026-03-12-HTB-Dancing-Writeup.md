@@ -5,11 +5,10 @@ categories: [CTF, HTB-StartingPoint]
 tags: [htb, starting-point, smb, nmap, openvpn, windows]
 image:
   path: /assets/img/dancing-badge.jpeg
+  
   alt: Hack The Box Dancing
 description: Writeup for Hack The Box Starting Point — Dancing. Covers VPN setup, Nmap scanning, and exploiting a misconfigured SMB service with anonymous access enabled.
 ---
-
-![Dancing Badge](/assets/img/dancing-badge.jpeg)
 
 ---
 
