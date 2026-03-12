@@ -9,8 +9,6 @@ image:
 description: Writeup for Hack The Box Starting Point — Fawn. Covers VPN setup, Nmap scanning, and exploiting a misconfigured FTP service with anonymous login enabled.
 ---
 
-![Fawn Badge](/assets/img/fawn-badge.jpeg)
-
 ---
 
 ## Overview
