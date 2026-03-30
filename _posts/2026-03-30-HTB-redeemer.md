@@ -4,14 +4,14 @@ date: 2026-03-30 00:00:00 +0800
 categories: [CTF, HTB-StartingPoint]
 tags: [htb, starting-point, nmap, openvpn, database, redis]
 image:
-  path: "C:\INTERN\blog\dietgucc1.github.io\assets\img\img-000.png"
+  path: "/assets/img/img-000.png"
   alt: Hack The Box Redeemer
 
 ---
 
 # Hack The Box - Redeemer
 
-![Redeemer Solved](C:\INTERN\blog\dietgucc1.github.io\assets\img\img-000.png)
+![Redeemer Solved](/assets/img/img-000.png)
 
 ---
 
@@ -50,7 +50,7 @@ This lab focuses on **enumerating a Redis server remotely** and then **dumping i
 
 To verify the connectivity and availability of the target, we run the `ping` command with the IP address. If we get replies, the target is alive.
 
-![Ping the target](C:\INTERN\blog\dietgucc1.github.io\assets\img\img-001.png)
+![Ping the target](/assets/img/img-001.png)
 
 Next, we run a full port scan using `nmap` with service version detection:
 
@@ -64,7 +64,7 @@ nmap -p- --min-rate 5000 -sV <target_ip>
 | `--min-rate 5000` | Send at least 5000 packets/sec (faster scan) |
 | `-sV` | Detect service name and version on open ports |
 
-![Nmap scan result](C:\INTERN\blog\dietgucc1.github.io\assets\img\img-002.png)
+![Nmap scan result](/assets/img/img-002.png)
 
 The scan reveals **port 6379** is open, running **Redis 5.0.7**.
 
@@ -90,7 +90,7 @@ Once connected, run `info` to get server details:
 10.129.136.187:6379> info
 ```
 
-![Redis info output](C:\INTERN\blog\dietgucc1.github.io\assets\img\img-003.png)
+![Redis info output](/assets/img/img-003.png)
 
 ---
 
@@ -105,7 +105,7 @@ Select database 0 and list all keys:
 10.129.136.187:6379> keys *
 ```
 
-![Keys in database](C:\INTERN\blog\dietgucc1.github.io\assets\img\img-004.png)
+![Keys in database](/assets/img/img-004.png)
 
 We can see **4 keys** in the database:
 - `numb`
@@ -123,7 +123,7 @@ Use the `get` command to retrieve the value of the `flag` key:
 10.129.136.187:6379> get flag
 ```
 
-![Getting the flag](C:\INTERN\blog\dietgucc1.github.io\assets\img\img-005.png)
+![Getting the flag](/assets/img/img-005.png)
 
 🎉 **Flag: `03e1d2b376c37ab3f5319922053953eb`**
 
