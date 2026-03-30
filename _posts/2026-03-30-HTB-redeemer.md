@@ -9,12 +9,6 @@ image:
 
 ---
 
-# Hack The Box - Redeemer
-
-![Redeemer Solved](/assets/img/img-000.png)
-
----
-
 ## Introduction
 
 Databases are a collection of organized information that can be easily accessed, managed and updated. There are different types of databases and one among them is **Redis**, which is an **'in-memory' database**. In-memory databases are the ones that rely essentially on the primary memory for data storage (meaning that the database is managed in the RAM of the system).
